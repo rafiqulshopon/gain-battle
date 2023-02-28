@@ -64,7 +64,7 @@ export default function App() {
 
       {displayPlayers && (
         <div className='player-list'>
-          <h2>All Players</h2>
+          <h2>{`All Players - ${players.length} `}</h2>
           <ul>
             {players.map((player, index) => (
               <li key={index}>
