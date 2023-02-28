@@ -58,8 +58,10 @@ export default function App() {
   return (
     <div className='App'>
       <h3>{`Gain Cricket Battle - ${moment().format('DD/MM/YYYY')}`}</h3>
-      <button onClick={toggleDisplayPlayers}>{showAllPlayersButtonText}</button>
       <button onClick={generateTeams}>Generate Teams</button>
+
+<button onClick={toggleDisplayPlayers}>{showAllPlayersButtonText}</button>
+
       {displayPlayers && (
         <div className='player-list'>
           <h2>All Players</h2>
