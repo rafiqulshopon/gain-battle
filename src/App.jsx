@@ -85,6 +85,7 @@ export default function App() {
           group='teams'
           className='team'
         >
+          <h3 className='team-name'>Team 1</h3>
           {team1.map((player) => (
             <div key={player}>{player}</div>
           ))}
@@ -95,6 +96,7 @@ export default function App() {
           group='teams'
           className='team'
         >
+          <h3 className='team-name'>Team 2</h3>
           {team2.map((player) => (
             <div key={player}>{player}</div>
           ))}

@@ -97,3 +97,9 @@ button {
   font-size: 16px;
   margin-top: 10px;
 }
+
+.team-name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
