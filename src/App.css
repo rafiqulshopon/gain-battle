@@ -1,0 +1,99 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+button {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #1f2022;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.hide-players {
+  background-color: #dc3545;
+}
+
+.player-list {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.player-list h2 {
+  margin-top: 0;
+}
+
+.player-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+}
+
+.player-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px;
+  min-width: 200px;
+}
+
+.player-list button {
+  background-color: #dc3545;
+  color: #fff;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  margin-left: 5px;
+}
+
+.teams {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.team {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  min-width: 200px;
+  max-width: 300px;
+}
+
+.team div {
+  margin: 5px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.error {
+  color: red;
+  font-size: 16px;
+  margin-top: 10px;
+}
