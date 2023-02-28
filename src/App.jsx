@@ -80,8 +80,13 @@ export default function App() {
           )}
         </div>
       )}
-      <div className='teams'>
+
+<div>
 <h3 className='team-name'>Team 1</h3>
+<h3 className='team-name'>Team 2</h3>
+</div>
+
+      <div className='teams'>
         <ReactSortable
           list={team1}
           setList={setTeam1}
@@ -92,7 +97,7 @@ export default function App() {
             <div key={player}>{player}</div>
           ))}
         </ReactSortable>
-<h3 className='team-name'>Team 2</h3>
+
         <ReactSortable
           list={team2}
           setList={setTeam2}
