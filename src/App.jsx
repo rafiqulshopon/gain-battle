@@ -81,24 +81,24 @@ export default function App() {
         </div>
       )}
       <div className='teams'>
+<h3 className='team-name'>Team 1</h3>
         <ReactSortable
           list={team1}
           setList={setTeam1}
           group='teams'
           className='team'
         >
-          <h3 className='team-name'>Team 1</h3>
           {team1.map((player) => (
             <div key={player}>{player}</div>
           ))}
         </ReactSortable>
+<h3 className='team-name'>Team 2</h3>
         <ReactSortable
           list={team2}
           setList={setTeam2}
           group='teams'
           className='team'
         >
-          <h3 className='team-name'>Team 2</h3>
           {team2.map((player) => (
             <div key={player}>{player}</div>
           ))}
