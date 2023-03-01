@@ -59,7 +59,7 @@ export default function App() {
 
   const handleAddPlayer = () => {
     if (newPlayerName) {
-      setPlayers([...players, newPlayerName]);
+      setPlayers([newPlayerName, ...players]);
       setNewPlayerName('');
     }
   };
