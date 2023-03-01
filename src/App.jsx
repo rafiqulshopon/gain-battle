@@ -4,7 +4,7 @@ import { ReactSortable } from 'react-sortablejs';
 import moment from 'moment/moment';
 const initialPlayers = [
   'Naim',
-'Nazmul',
+  'Nazmul',
   'Sakib-UL',
   'Elias',
   'Calvin',
@@ -33,6 +33,7 @@ const initialPlayers = [
 ];
 export default function App() {
   const [players, setPlayers] = useState(initialPlayers);
+  const [newPlayerName, setNewPlayerName] = useState('');
   const [team1, setTeam1] = useState([]);
   const [team2, setTeam2] = useState([]);
   const [displayPlayers, setDisplayPlayers] = useState(false);
@@ -56,21 +57,45 @@ export default function App() {
     ? 'Hide All Players'
     : 'Show All Players';
 
+  const handleAddPlayer = () => {
+    if (newPlayerName) {
+      setPlayers([...players, newPlayerName]);
+      setNewPlayerName('');
+    }
+  };
+
   return (
     <div className='App'>
       <h3>{`Gain Cricket Battle - ${moment().format('DD/MM/YYYY')}`}</h3>
-      <button onClick={generateTeams}>Generate Teams</button>
+      <button className='button' onClick={generateTeams}>
+        Generate Teams
+      </button>
 
-      <button onClick={toggleDisplayPlayers}>{showAllPlayersButtonText}</button>
+      <button className='button' onClick={toggleDisplayPlayers}>
+        {showAllPlayersButtonText}
+      </button>
 
       {displayPlayers && (
         <div className='player-list'>
           <h2>{`All Players - ${players.length} `}</h2>
+          <div>
+            <input
+              type='text'
+              value={newPlayerName}
+              onChange={(e) => setNewPlayerName(e.target.value)}
+              placeholder='Enter player name'
+            />
+            <button className='add-player-btn' onClick={handleAddPlayer}>
+              Add Player
+            </button>
+          </div>
           <ul>
             {players.map((player, index) => (
               <li key={index}>
                 {player}
-                <button onClick={() => removePlayer(player)}>Remove</button>
+                <button className='button' onClick={() => removePlayer(player)}>
+                  Remove
+                </button>
               </li>
             ))}
           </ul>
