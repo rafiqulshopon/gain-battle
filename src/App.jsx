@@ -4,6 +4,7 @@ import { ReactSortable } from 'react-sortablejs';
 import moment from 'moment/moment';
 const initialPlayers = [
   'Naim',
+'Nazmul',
   'Sakib-UL',
   'Elias',
   'Calvin',
