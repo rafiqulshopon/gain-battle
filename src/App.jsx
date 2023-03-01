@@ -60,7 +60,7 @@ export default function App() {
       <h3>{`Gain Cricket Battle - ${moment().format('DD/MM/YYYY')}`}</h3>
       <button onClick={generateTeams}>Generate Teams</button>
 
-<button onClick={toggleDisplayPlayers}>{showAllPlayersButtonText}</button>
+      <button onClick={toggleDisplayPlayers}>{showAllPlayersButtonText}</button>
 
       {displayPlayers && (
         <div className='player-list'>
@@ -81,33 +81,38 @@ export default function App() {
         </div>
       )}
 
-<div>
-<h3 className='team-name'>Team 1</h3>
-<h3 className='team-name'>Team 2</h3>
-</div>
-
       <div className='teams'>
-        <ReactSortable
-          list={team1}
-          setList={setTeam1}
-          group='teams'
-          className='team'
-        >
-          {team1.map((player) => (
-            <div key={player}>{player}</div>
-          ))}
-        </ReactSortable>
+        <div className='team-wrapper'>
+          <h3 className='team-name'>Team 1</h3>
+          <ReactSortable
+            list={team1}
+            setList={setTeam1}
+            group='teams'
+            className='team'
+          >
+            {team1.map((player) => (
+              <div className='player' key={player}>
+                {player}
+              </div>
+            ))}
+          </ReactSortable>
+        </div>
 
-        <ReactSortable
-          list={team2}
-          setList={setTeam2}
-          group='teams'
-          className='team'
-        >
-          {team2.map((player) => (
-            <div key={player}>{player}</div>
-          ))}
-        </ReactSortable>
+        <div className='team-wrapper'>
+          <h3 className='team-name'>Team 2</h3>
+          <ReactSortable
+            list={team2}
+            setList={setTeam2}
+            group='teams'
+            className='team'
+          >
+            {team2.map((player) => (
+              <div className='player' key={player}>
+                {player}
+              </div>
+            ))}
+          </ReactSortable>
+        </div>
       </div>
 
       <h4>Powered by Rafiqul</h4>
