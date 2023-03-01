@@ -104,6 +104,36 @@ button {
   align-items: center;
 }
 
+.team-wrapper {
+  position: relative;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  min-width: 200px;
+  max-width: 300px;
+}
+
+.team-wrapper h3 {
+  position: center;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  font-size: 16px;
+}
+
+.team-wrapper .player {
+  margin: 5px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  text-align: center;
+}
+
 @media (max-width: 768px) {
   .App {
     margin: 10px;
