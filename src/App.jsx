@@ -17,6 +17,7 @@ const initialPlayers = [
 export default function App() {
   const [players, setPlayers] = useState(initialPlayers);
   const [newPlayerName, setNewPlayerName] = useState('');
+  const [playerType, setPlayerType] = useState('batsmen');
   const [team1, setTeam1] = useState([]);
   const [team2, setTeam2] = useState([]);
   const [displayPlayers, setDisplayPlayers] = useState(false);
@@ -42,9 +43,18 @@ export default function App() {
 
   const handleAddPlayer = () => {
     if (newPlayerName) {
-      setPlayers([newPlayerName, ...players]);
+      setPlayers([
+        { id: players.length + 1, name: newPlayerName, type: playerType },
+        ...players,
+      ]);
       setNewPlayerName('');
+      setPlayerType('batsmen');
     }
+  };
+
+  const handlePlayerTypeChange = (event) => {
+    const selectedPlayerType = event.target.value;
+    setPlayerType(selectedPlayerType);
   };
 
   return (
@@ -63,40 +73,60 @@ export default function App() {
       {displayPlayers && (
         <div className='player-list'>
           <h2>{`All Players - ${players.length} `}</h2>
-          <div>
+          <div className='add-player-container'>
             <input
               type='text'
               value={newPlayerName}
               onChange={(e) => setNewPlayerName(e.target.value)}
               placeholder='Enter player name'
             />
+            <div>
+              <label htmlFor='player-type'>Player Type:</label>
+              <select
+                id='player-type'
+                value={playerType}
+                onChange={handlePlayerTypeChange}
+              >
+                <option value='batsmen'>Batsman</option>
+                <option value='bowler'>Bowler</option>
+                <option value='all-rounder'>All-rounder</option>
+              </select>
+            </div>
             <button className='add-player-btn' onClick={handleAddPlayer}>
               Add Player
             </button>
           </div>
           <ul>
-            {players.map((player, index) => (
-              <li key={index}>
-                {player.name}
-                {player.type === 'batsmen' && (
-                  <span className='player-type player-type-batsman'>
-                    Batsman
-                  </span>
-                )}
-                {player.type === 'bowler' && (
-                  <span className='player-type player-type-bowler'>Bowler</span>
-                )}
-                {player.type === 'all-rounder' && (
-                  <span className='player-type player-type-all-rounder'>
-                    All Rounder
-                  </span>
-                )}
-                <button className='button' onClick={() => removePlayer(player)}>
-                  Remove
-                </button>
-              </li>
-            ))}
+            {players
+              .sort((a, b) => a.name.localeCompare(b.name))
+              .map((player, index) => (
+                <li key={index}>
+                  {player.name}
+                  {player.type === 'batsmen' && (
+                    <span className='player-type player-type-batsman'>
+                      Batsman
+                    </span>
+                  )}
+                  {player.type === 'bowler' && (
+                    <span className='player-type player-type-bowler'>
+                      Bowler
+                    </span>
+                  )}
+                  {player.type === 'all-rounder' && (
+                    <span className='player-type player-type-all-rounder'>
+                      All Rounder
+                    </span>
+                  )}
+                  <button
+                    className='button'
+                    onClick={() => removePlayer(player)}
+                  >
+                    Remove
+                  </button>
+                </li>
+              ))}
           </ul>
+
           {players.length === 0 && (
             <p className='error'>
               No players available. Please refresh the page
