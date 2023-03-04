@@ -3,35 +3,17 @@ import React, { useState } from 'react';
 import { ReactSortable } from 'react-sortablejs';
 import moment from 'moment/moment';
 const initialPlayers = [
-  'Akash',
-  'Naim',
-  'Nazmul',
-  'Sakib-UL',
-  'Elias',
-  'Calvin',
-  'Imran',
-  'Mehrab',
-  'Emon',
-  'Shehab',
-  'Billal',
-  'Ashish',
-  'Rakib',
-  'Shofiqur',
-  'Rokon',
-  'Ashiq',
-  'Foysal',
-  'Sohel',
-  'Eshan',
-  'Hasan',
-  'Sakib-Laravel',
-  'Abid',
-  'Shahed',
-  'Shishir',
-  'Emroz',
-  'Tofayel',
-  'Ahmed',
-  'Rabiul',
+  { id: 1, name: 'Naim', type: 'batsmen' },
+  { id: 2, name: 'Nazmul', type: 'all-rounder' },
+  { id: 3, name: 'Sakib-UL', type: 'all-rounder' },
+  { id: 4, name: 'Elias', type: 'batsmen' },
+  { id: 5, name: 'Calvin', type: 'bowler' },
+  { id: 6, name: 'Imran', type: 'all-rounder' },
+  { id: 7, name: 'Mehrab', type: 'batsmen' },
+  { id: 8, name: 'Emon', type: 'batsmen' },
+  { id: 9, name: 'Shehab', type: 'all-rounder' },
 ];
+
 export default function App() {
   const [players, setPlayers] = useState(initialPlayers);
   const [newPlayerName, setNewPlayerName] = useState('');
@@ -95,7 +77,20 @@ export default function App() {
           <ul>
             {players.map((player, index) => (
               <li key={index}>
-                {player}
+                {player.name}
+                {player.type === 'batsmen' && (
+                  <span className='player-type player-type-batsman'>
+                    Batsman
+                  </span>
+                )}
+                {player.type === 'bowler' && (
+                  <span className='player-type player-type-bowler'>Bowler</span>
+                )}
+                {player.type === 'all-rounder' && (
+                  <span className='player-type player-type-all-rounder'>
+                    All Rounder
+                  </span>
+                )}
                 <button className='button' onClick={() => removePlayer(player)}>
                   Remove
                 </button>
@@ -120,8 +115,21 @@ export default function App() {
             className='team'
           >
             {team1.map((player) => (
-              <div className='player' key={player}>
-                {player}
+              <div className='player' key={player.id}>
+                {player.name}
+                {player.type === 'batsmen' && (
+                  <span className='player-type player-type-batsman'>
+                    Batsman
+                  </span>
+                )}
+                {player.type === 'bowler' && (
+                  <span className='player-type player-type-bowler'>Bowler</span>
+                )}
+                {player.type === 'all-rounder' && (
+                  <span className='player-type player-type-all-rounder'>
+                    All Rounder
+                  </span>
+                )}
               </div>
             ))}
           </ReactSortable>
@@ -136,8 +144,26 @@ export default function App() {
             className='team'
           >
             {team2.map((player) => (
-              <div className='player' key={player}>
-                {player}
+              <div className='player' key={player.id}>
+                {player.name}
+                {player.type === 'batsmen' && (
+                  <span className='player-type player-type-batsman'>
+                    Batsman
+                  </span>
+                )}
+                {player.type === 'bowler' && (
+                  <span className='player-type player-type-bowler'>Bowler</span>
+                )}
+                {player.type === 'all-rounder' && (
+                  <span className='player-type player-type-all-rounder'>
+                    All Rounder
+                  </span>
+                )}
+                {player.type === 'wicket-keeper' && (
+                  <span className='player-type player-type-wicket-keeper'>
+                    Wicket Keeper
+                  </span>
+                )}
               </div>
             ))}
           </ReactSortable>

@@ -157,6 +157,34 @@ input[type='text'] {
   text-align: center;
 }
 
+.player-type {
+  font-size: 0.7rem;
+  margin-left: 0.5rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+.player-type-batsman {
+  background-color: #ffeb3b;
+  color: #333;
+}
+
+.player-type-bowler {
+  background-color: #e91e63;
+  color: #fff;
+}
+
+.player-type-all-rounder {
+  background-color: #2196f3;
+  color: #fff;
+}
+
+.player-type-wicket-keeper {
+  background-color: #4caf50;
+  color: #fff;
+}
+
 @media (max-width: 768px) {
   .App {
     margin: 10px;
