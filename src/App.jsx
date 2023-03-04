@@ -30,6 +30,7 @@ const initialPlayers = [
   { id: 25, name: 'Tofayel', type: 'bowler' },
   { id: 26, name: 'Ahmed', type: 'all-rounder' },
   { id: 27, name: 'Rabiul', type: 'batsmen' },
+  { id: 28, name: 'Akash', type: 'batsmen' },
 ];
 
 export default function App() {
