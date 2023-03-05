@@ -93,7 +93,7 @@ export default function App() {
             </button>
           </div>
           <ul>
-            {players.map((player, index) => (
+            {players.sort((a, b) => a.localeCompare(b)).map((player, index) => (
               <li key={index}>
                 {player}
                 <button className='button' onClick={() => removePlayer(player)}>
