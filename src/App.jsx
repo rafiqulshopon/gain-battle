@@ -143,8 +143,6 @@ export default function App() {
           </ReactSortable>
         </div>
       </div>
-
-      <h4>Powered by Rafiqul</h4>
     </div>
   );
 }
