@@ -4,11 +4,11 @@ import { ReactSortable } from 'react-sortablejs';
 import moment from 'moment/moment';
 const initialPlayers = [
   { id: 1, name: 'Naim', type: 'batsmen' },
-  { id: 2, name: 'Nazmul', type: 'bowler' },
+  { id: 2, name: 'Nazmul', type: 'all-rounder' },
   { id: 3, name: 'Sakib-UL', type: 'all-rounder' },
   { id: 4, name: 'Elias', type: 'batsmen' },
   { id: 5, name: 'Calvin', type: 'all-rounder' },
-  { id: 6, name: 'Imran', type: 'bowler' },
+  { id: 6, name: 'Imran', type: 'all-rounder' },
   { id: 7, name: 'Mehrab', type: 'batsmen' },
   { id: 8, name: 'Emon', type: 'all-rounder' },
   { id: 9, name: 'Shehab', type: 'batsmen' },
