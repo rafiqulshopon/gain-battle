@@ -144,7 +144,7 @@ export default function App() {
         </div>
       </div>
 
-      <h4>Powered by Rafiqul</h4>
+     { * <h4>Powered by Rafiqul</h4> * }
     </div>
   );
 }
