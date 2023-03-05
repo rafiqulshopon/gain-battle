@@ -40,6 +40,14 @@ export default function App() {
   const [team1, setTeam1] = useState([]);
   const [team2, setTeam2] = useState([]);
   const [displayPlayers, setDisplayPlayers] = useState(false);
+
+  const isValidTextInput = (value) => {
+    if (value && value.trim() !== '') {
+      return true;
+    }
+    return false;
+  };
+
   const generateTeams = () => {
     const allPlayers = [...players];
     const shuffledPlayers = allPlayers.sort(() => 0.5 - Math.random());
@@ -96,7 +104,10 @@ export default function App() {
             <input
               type='text'
               value={newPlayerName}
-              onChange={(e) => setNewPlayerName(e.target.value)}
+              onChange={(e) =>
+                isValidTextInput(e.target.value) &&
+                setNewPlayerName(e.target.value)
+              }
               placeholder='Enter player name'
             />
             <div>
