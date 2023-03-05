@@ -33,6 +33,10 @@ input[type='text'] {
   cursor: pointer;
 }
 
+.add-player-btn:hover {
+  background-color: #3e8e41;
+}
+
 .button {
   margin: 10px;
   padding: 10px;
