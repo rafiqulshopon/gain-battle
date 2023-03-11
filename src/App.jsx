@@ -122,7 +122,7 @@ export default function App() {
     return acc + player.weight;
   }, 0);
 
-  console.log(totalWeight1, totalWeight2);
+  // console.log(totalWeight1, totalWeight2);
 
   return (
     <div className='App'>
@@ -181,7 +181,7 @@ export default function App() {
 
       <div className='teams'>
         <div className='team-wrapper'>
-          <h3 className='team-name'>Team 1</h3>
+          <h3 className='team-name'>Team 1 - Weight {totalWeight1 || 0}</h3>
           <ReactSortable
             list={team1}
             setList={setTeam1}
@@ -197,7 +197,7 @@ export default function App() {
         </div>
 
         <div className='team-wrapper'>
-          <h3 className='team-name'>Team 2</h3>
+          <h3 className='team-name'>Team 2 - Weight {totalWeight2 || 0}</h3>
           <ReactSortable
             list={team2}
             setList={setTeam2}
