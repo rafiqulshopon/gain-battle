@@ -11,16 +11,6 @@ export default function App() {
   const [team2, setTeam2] = useState([]);
   const [displayPlayers, setDisplayPlayers] = useState(false);
 
-  // const generateTeams = () => {
-  //   const allPlayers = [...initialPlayers];
-  //   const shuffledPlayers = allPlayers.sort(() => 0.5 - Math.random());
-  //   const mid = Math.ceil(shuffledPlayers.length / 2);
-  //   const firstTeam = shuffledPlayers.slice(0, mid);
-  //   const secondTeam = shuffledPlayers.slice(mid);
-  //   setTeam1(firstTeam);
-  //   setTeam2(secondTeam);
-  // };
-
   const generateTeams = () => {
     const allPlayers = [...initialPlayers];
     const shuffledPlayers = allPlayers.sort(() => 0.5 - Math.random());
@@ -28,22 +18,22 @@ export default function App() {
     // Divide players into two teams based on weight
     const firstTeam = [];
     const secondTeam = [];
-    let totalWeight1 = 0;
-    let totalWeight2 = 0;
 
-    shuffledPlayers.forEach((player) => {
-      if (totalWeight1 <= totalWeight2) {
+    let totalWeight = 0;
+    for (let i = 0; i < shuffledPlayers.length; i++) {
+      const player = shuffledPlayers[i];
+      if (i % 2 === 0) {
         firstTeam.push(player);
-        totalWeight1 += player.weight;
+        totalWeight += player.weight;
       } else {
         secondTeam.push(player);
-        totalWeight2 += player.weight;
+        totalWeight -= player.weight;
       }
-    });
+    }
 
-    // If the difference in total weight between the teams is greater than 1,
-    // swap a player between the teams to try and balance the weights
-    const weightDiff = Math.abs(totalWeight1 - totalWeight2);
+    // Check if the total weight of the teams is not equal, and swap a player
+    // between the teams to try and balance the weights
+    let weightDiff = Math.abs(totalWeight);
     if (weightDiff > 1) {
       let playerSwapped = false;
       let team1Index = 0;
@@ -55,18 +45,14 @@ export default function App() {
         const player2 = secondTeam[team2Index];
 
         if (
-          Math.abs(
-            totalWeight1 -
-              player1.weight +
-              player2.weight -
-              (totalWeight2 - player2.weight + player1.weight)
-          ) <= weightDiff
+          Math.abs(totalWeight - 2 * player1.weight) <= weightDiff ||
+          Math.abs(totalWeight + 2 * player2.weight) <= weightDiff
         ) {
           // Swap the players and update the total weights
           firstTeam[team1Index] = player2;
           secondTeam[team2Index] = player1;
-          totalWeight1 = totalWeight1 - player1.weight + player2.weight;
-          totalWeight2 = totalWeight2 - player2.weight + player1.weight;
+          totalWeight = totalWeight - 2 * player1.weight + 2 * player2.weight;
+          weightDiff = Math.abs(totalWeight);
           playerSwapped = true;
         }
 
@@ -82,6 +68,15 @@ export default function App() {
           playerSwapped = true;
         }
       }
+    }
+
+    // If the teams have different numbers of players, move one player from the larger team to the smaller team
+    const playerDiff = firstTeam.length - secondTeam.length;
+    if (playerDiff !== 0) {
+      const largerTeam = playerDiff > 0 ? firstTeam : secondTeam;
+      const smallerTeam = playerDiff > 0 ? secondTeam : firstTeam;
+      const playerToMove = largerTeam.pop();
+      smallerTeam.push(playerToMove);
     }
 
     setTeam1(firstTeam);
@@ -121,8 +116,6 @@ export default function App() {
   const totalWeight2 = team2.reduce((acc, player) => {
     return acc + player.weight;
   }, 0);
-
-  // console.log(totalWeight1, totalWeight2);
 
   return (
     <div className='App'>
