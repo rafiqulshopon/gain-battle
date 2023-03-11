@@ -12,7 +12,7 @@ export default function App() {
   const [displayPlayers, setDisplayPlayers] = useState(false);
 
   const generateTeams = () => {
-    const allPlayers = [...initialPlayers];
+    const allPlayers = [...players];
     const shuffledPlayers = allPlayers.sort(() => 0.5 - Math.random());
 
     // Divide players into two teams based on weight
