@@ -3,8 +3,6 @@ import React, { useState } from 'react';
 import { ReactSortable } from 'react-sortablejs';
 import moment from 'moment/moment';
 const initialPlayers = [
-  'Rafiqul',
-  'Sajidur',
   'Akash',
   'Naim',
   'Nazmul',
