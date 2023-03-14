@@ -13,6 +13,7 @@ export default function App() {
   const [displayPlayers, setDisplayPlayers] = useState(false);
 
   const generateTeams = () => {
+    setDisplayPlayers(false);
     const allPlayers = [...players];
     const shuffledPlayers = allPlayers.sort(() => 0.5 - Math.random());
 
