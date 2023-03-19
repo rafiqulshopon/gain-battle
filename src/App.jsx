@@ -7,10 +7,12 @@ import { initialPlayers } from './helpers/players';
 export default function App() {
   const [players, setPlayers] = useState(initialPlayers);
   const [newPlayerName, setNewPlayerName] = useState('');
-  const [newPlayerWeight, setNewPlayerWeight] = useState('');
+  const [newPlayerWeight, setNewPlayerWeight] = useState();
   const [team1, setTeam1] = useState([]);
   const [team2, setTeam2] = useState([]);
   const [displayPlayers, setDisplayPlayers] = useState(false);
+
+  console.log(players);
 
   const generateTeams = () => {
     setDisplayPlayers(false);
@@ -107,7 +109,7 @@ export default function App() {
       };
       setPlayers([newPlayer, ...players]);
       setNewPlayerName('');
-      setNewPlayerWeight('');
+      setNewPlayerWeight();
     }
   };
 
@@ -142,9 +144,9 @@ export default function App() {
               placeholder='Enter player name'
             />
             <input
-              type='text'
+              type='number'
               value={newPlayerWeight}
-              onChange={(e) => setNewPlayerWeight(e.target.value)}
+              onChange={(e) => setNewPlayerWeight(parseInt(e.target.value))}
               placeholder='Enter player weight'
             />
             <button className='add-player-btn' onClick={handleAddPlayer}>
