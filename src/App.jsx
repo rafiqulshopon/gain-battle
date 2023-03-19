@@ -12,8 +12,6 @@ export default function App() {
   const [team2, setTeam2] = useState([]);
   const [displayPlayers, setDisplayPlayers] = useState(false);
 
-  console.log(players);
-
   const generateTeams = () => {
     setDisplayPlayers(false);
     const allPlayers = [...players];
