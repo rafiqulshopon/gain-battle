@@ -8,7 +8,7 @@ export const initialPlayers = [
   { id: 7, name: 'Ashiq', weight: 4 },
   { id: 8, name: 'Rakib', weight: 4 },
   { id: 9, name: 'Abid', weight: 3 },
-  { id: 10, name: 'Tofayel', weight: 3 },
+  // { id: 10, name: 'Tofayel', weight: 3 },
   { id: 11, name: 'Ashish', weight: 3 },
   { id: 12, name: 'Calvin', weight: 3 },
   // { id: 13, name: 'Shehab', weight: 3 },
