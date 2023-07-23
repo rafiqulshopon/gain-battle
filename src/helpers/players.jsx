@@ -1,7 +1,7 @@
 export const initialPlayers = [
-  { id: 1, name: 'Foysal', weight: 4 },
+//  { id: 1, name: 'Foysal', weight: 4 },
 //   { id: 2, name: 'Mehrab', weight: 4 },
-  {id : 2, name: 'Samiul', weight:4 },
+ // {id : 2, name: 'Samiul', weight:4 },
   { id: 3, name: 'Emon', weight: 4 },
   { id: 4, name: 'Nazmul', weight: 4 },
   { id: 5, name: 'Shahed', weight: 4 },
@@ -27,13 +27,15 @@ export const initialPlayers = [
 //   { id: 25, name: 'Ahmed', weight: 2 },
   { id: 26, name: 'Emroz', weight: 1 },
   { id: 27, name: 'Rabiul', weight: 2 },
-  { id: 28, name: 'Sajidur', weight: 1 },
+//  { id: 28, name: 'Sajidur', weight: 1 },
 //  { id: 29, name: 'Sohel', weight: 1 },
   { id: 30, name: 'Prince', weight: 2 },
   { id: 31, name: 'Zitan', weight: 1 },
   { id: 32, name: 'Rasel', weight: 1 },
   { id: 33, name: 'Younoch', weight: 1 },
   { id: 34, name: 'Evan', weight: 2 },
-  { id :35, name: 'Raihan', weight :1}
+  { id :35, name: 'Raihan', weight :1},
+  {id:36, name : 'Shahnewaz', weight :1},
+  {id:37, name : 'Tufyal', weight :2}
 
 ];
