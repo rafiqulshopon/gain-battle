@@ -37,7 +37,7 @@ export const initialPlayers = [
   { id :35, name: 'Raihan', weight :1},
   {id:36, name : 'Shahnewaz', weight :1},
   {id:37, name : 'Tufyal', weight :2},
- {id:38, name: 'Rafiqul', weight:3},
+// {id:38, name: 'Rafiqul', weight:3},
  {id:39, name: 'Riaz', weight:2},
 
 ];
