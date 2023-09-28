@@ -16,7 +16,7 @@ export const initialPlayers = [
   { id: 15, name: 'Rokon',        weight: 2 },
   { id: 16, name: 'Eshan',        weight: 2 },
   { id: 17, name: 'Sakib-UL',     weight: 1 },
-  { id: 18, name: 'Naim',         weight: 2 },
+  { id: 18, name: 'Saaquib',      weight: 2 },
   { id: 19, name: 'Emroz',        weight: 1 },
   { id: 20, name: 'Prince',       weight: 2 },
   { id: 21, name: 'Zitan',        weight: 1 },
@@ -27,5 +27,4 @@ export const initialPlayers = [
   { id: 26, name: 'Shahnewaz',    weight: 1 },
   { id: 27, name: 'Riaz',         weight: 2 },
   { id: 28, name: 'Kibria',       weight: 1 },
-  { id: 29, name: 'Saaquib',      weight: 2 },
 ];
