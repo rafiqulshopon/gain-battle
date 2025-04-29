@@ -15,4 +15,5 @@ export const initialPlayers = [
   { id: 22, name: "Rifat", weight: 1 },
    { id: 23, name: "Akbar", weight: 1 },
  { id: 24, name: "Maruf", weight: 1 },
+  { id: 25, name: "Shamimul", weight: 3 },
 ];
